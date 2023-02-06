@@ -16,8 +16,9 @@ class CalcoloController extends Controller
         $consumo = Consumo::where([['combustibile_id', '=', $tipo],['tipoconsumo', '=', $quantita]])->first();
         $cons_giornaliero = $consumo->id;
         $cons_tot_giornaliero = $cons_giornaliero * $persone;
+        $spesa_tot_giornaliera = $cons_tot_giornaliero * $consumo->combustibile->costo1kwhnetto;
         $is_calc = true;
         $combustibili = Combustibile::all();
-        return view('home', compact('cons_tot_giornaliero', 'is_calc', 'combustibili', 'persone'))->with(session()->flash('success', 'calcolo esegioto con successo'));
+        return view('home', compact('cons_tot_giornaliero', 'is_calc', 'combustibili', 'persone', 'spesa_tot_giornaliera'))->with(session()->flash('success', 'calcolo esegioto con successo'));
     }
 }

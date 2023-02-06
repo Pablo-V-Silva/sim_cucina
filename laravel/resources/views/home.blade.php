@@ -25,7 +25,7 @@
             </div>
             <div class="row">
                 <h2>Inserisci il numero di persone in casa</h2>
-                <input type="number" name="numeroPersone">
+                <input type="number" name="numeroPersone" value="{{ old('numeroPersone') }}">
             </div>
             <div class="row">
                 <h2>Inserisci la quantità di consumo</h2>
@@ -40,10 +40,10 @@
         </form>
         @if($is_calc == true)
             <h2>In totale {{$persone > 1 ? 'consumate' : 'consumi'}}:</h2>
-            <h3>{{$cons_tot_giornaliero}} kw al giorno</h3>
-            <h3>{{$cons_tot_giornaliero * 7}} kw a settimana</h3>
-            <h3>{{$cons_tot_giornaliero * 30}} kw al mese*</h3>
-            <h3>{{$cons_tot_giornaliero * 365}} kw all'anno</h3>
+            <h3>{{$cons_tot_giornaliero}} kw al giorno (€ {{$spesa_tot_giornaliera}})</h3>
+            <h3>{{$cons_tot_giornaliero * 7}} kw a settimana (€ {{$spesa_tot_giornaliera * 7}})</h3>
+            <h3>{{$cons_tot_giornaliero * 30}} kw al mese* (€ {{$spesa_tot_giornaliera * 30}})</h3>
+            <h3>{{$cons_tot_giornaliero * 365}} kw all'anno (€ {{$spesa_tot_giornaliera * 365}})</h3>
         @endif
     </div>
 </main>
