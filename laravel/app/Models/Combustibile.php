@@ -11,7 +11,7 @@ class Combustibile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tipo','tecnologia','potere_calorifero','unita_di_misura','costo_1kwh_lordo','costo_1kwh_netto','resa_conversione'
+        'tipo','tecnologia','poterecalorifero','unitadimisura','costo1kwhlordo','costo1kwhnetto','resaconversione'
     ];
 
     public function consumo(): BelongsTo {

@@ -15,8 +15,8 @@ class CreateConsumosTable extends Migration
     {
         Schema::create('consumos', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_consumo');
-            $table->double('unita_consumate');
+            $table->string('tipoconsumo');
+            $table->double('unitaconsumate');
             $table->timestamps();
         });
     }

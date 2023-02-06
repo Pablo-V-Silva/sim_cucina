@@ -22,19 +22,10 @@
     @yield('header_js')
 
 </head>
-<body class="antialiased">
+<body>
 
     @yield('content')
-    <div class="container">
-        <div class="row row-cols-6">
-            <div class="col card">
-                <img class="cardImg py-3" src="{{ asset('img/to_be_continued.png') }}" alt="">
-                <h3 class="cardTitle text-center">Title</h3>
-            </div>
-        </div>
-    </div>
-
-
+    
     @yield('footer_js')
 </body>
 

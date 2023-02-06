@@ -10,8 +10,8 @@ class Consumo extends Model
 {
     use HasFactory;
 
-    private $fillable = [
-        'id_combustibile', 'tipo_consumo', 'unita_consumate'
+    protected $fillable = [
+        'id_combustibile', 'tipoconsumo', 'unitaconsumate'
     ];
 
     public function combustibile(): HasMany{

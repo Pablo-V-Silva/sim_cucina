@@ -17,12 +17,12 @@ class CreateCombustibilesTable extends Migration
             $table->id();
             $table->string('tipo');
             $table->string('tecnologia')->nullable();
-            $table->double('potere_calorifero');
-            $table->double('costo_unitario');
-            $table->string('unita_di_misura');
-            $table->double('costo_1kwh_lordo');
-            $table->double('costo_1kwh_netto');
-            $table->tinyInteger('resa_conversione');
+            $table->double('poterecalorifero');
+            $table->double('costounitario');
+            $table->string('unitadimisura');
+            $table->double('costo1kwhlordo');
+            $table->double('costo1kwhnetto');
+            $table->tinyInteger('resaconversione');
             $table->timestamps();
         });
     }

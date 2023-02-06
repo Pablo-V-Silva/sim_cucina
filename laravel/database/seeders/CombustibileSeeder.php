@@ -26,12 +26,12 @@ class CombustibileSeeder extends Seeder
             $combustibile = new Combustibile();
             $combustibile->tipo = $data[$i][0];
             $combustibile->tecnologia = $data[$i][1];
-            $combustibile->potere_calorifero = $data[$i][2];
-            $combustibile->costo_unitario = $data[$i][3];
-            $combustibile->unita_di_misura = $data[$i][4];
-            $combustibile->costo_1kwh_lordo = $data[$i][5];
-            $combustibile->costo_1kwh_netto = $data[$i][6];
-            $combustibile->resa_conversione = $data[$i][7];
+            $combustibile->poterecalorifero = $data[$i][2];
+            $combustibile->costounitario = $data[$i][3];
+            $combustibile->unitadimisura = $data[$i][4];
+            $combustibile->costo1kwhlordo = $data[$i][5];
+            $combustibile->costo1kwhnetto = $data[$i][6];
+            $combustibile->resaconversione = $data[$i][7];
             $combustibile->save();
         }
     }
