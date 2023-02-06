@@ -14,7 +14,7 @@ class CalcoloController extends Controller
         $quantita = $request->quantita;
         $tipo = $request->tipoCombustibile;
         $consumo = Consumo::where([['combustibile_id', '=', $tipo],['tipoconsumo', '=', $quantita]])->first();
-        $cons_giornaliero = $consumo->id;
+        $cons_giornaliero = $consumo->unitaconsumate / 7;
         $cons_tot_giornaliero = $cons_giornaliero * $persone;
         $spesa_tot_giornaliera = $cons_tot_giornaliero * $consumo->combustibile->costo1kwhnetto;
         $is_calc = true;
