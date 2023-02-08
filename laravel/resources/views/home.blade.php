@@ -44,6 +44,7 @@
             <h3>{{$cons_tot_giornaliero * 7}} kw a settimana (€ {{$spesa_tot_giornaliera * 7}})</h3>
             <h3>{{$cons_tot_giornaliero * 30}} kw al mese* (€ {{$spesa_tot_giornaliera * 30}})</h3>
             <h3>{{$cons_tot_giornaliero * 365}} kw all'anno (€ {{$spesa_tot_giornaliera * 365}})</h3>
+            <a href="{{route('confronta_cucina', ['spesa' => $spesa_tot_giornaliera, 'persone' => $persone, 'consumo' => $cons_tot_giornaliero, 'object' => $consumo] )}}">CONFRONTA</a>
         @endif
     </div>
 </main>
