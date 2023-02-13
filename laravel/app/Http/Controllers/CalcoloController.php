@@ -38,8 +38,9 @@ class CalcoloController extends Controller
         $persone = $validate['persone'];
         $spesa = $validate['spesa'];
         $object = $validate['object']; */
+        $confrontando = false;
 
-        return view('confronta' , compact('validate', 'combustibili'));
+        return view('confronta' , compact('validate', 'combustibili','confrontando'));
     }
 
     public function calcoloConfronta(Request $request){
@@ -51,8 +52,11 @@ class CalcoloController extends Controller
         $confronto = $request->confronto;
         $persone = $request->persone;
         /* dd($confronto); */
+        $combustibili = Combustibile::all();
 
         $confrontato = Consumo::where([['combustibile_id', '=', $confronto], ['tipoconsumo' , '=', $vecchioCon->tipoconsumo]])->first();
-        dd($confrontato);
+        /* dd($confrontato); */
+        $confrontando = true;
+        return view('confronta', compact('confrontato', 'vecchioCon', 'persone', 'confrontando', 'combustibili'));
     } 
 }
