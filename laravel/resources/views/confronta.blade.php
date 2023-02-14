@@ -1,6 +1,7 @@
 @extends('layouts.mainLayout')
 
 @section('css')
+<link rel="stylesheet" href="{{asset('css/confronta.css')}}">
 
 @endsection
 

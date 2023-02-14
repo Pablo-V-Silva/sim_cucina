@@ -22,3 +22,7 @@ Route::get('/calcola', [CalcoloController::class, 'calcoloCucina'])->name('calco
 Route::get('/confronta', [CalcoloController::class, 'confrontaCucina'])->name('confronta_cucina');
 
 Route::get('/calcola-confronto', [CalcoloController::class, 'calcoloConfronta'])->name('calcola_confronto');
+
+Route::get('/sethome', function(){
+    return view('set.home');
+})->name('layoutHome');
