@@ -273,8 +273,252 @@ accordion-main -->
 <!--=================================
 accordion-main -->
 
+<!--=================================
+welcome-01 -->
+
+<section class="page-section-ptb welcome-01 bg fixed" style="background: url(images/bg/01.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="mb-2">FOR ALL YOUR SEO AND ONLINE MARKETING NEEDS</h3>
+                <p class="mb-2">We always provide Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                <ul class="list-style-right">
+                    <li> <i class="fa fa-check"></i> Burning Desire Golden Key Or Red Herring</li>
+                    <li> <i class="fa fa-check"></i> How I Lost The Secret Of Dazzling Success For 20 Years</li>
+                    <li> <i class="fa fa-check"></i> Burning Desire Golden Key Or Red Herring</li>
+                    <li> <i class="fa fa-check"></i> Hypnotherapy For Motivation Getting The Drive Back</li>
+                </ul>
+                <a class="button mt-3" href="#">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--=================================
+welcome-01 -->
+
+<!--=================================
+pricing-packages -->
+
+<section class="pricing-packages page-section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <span>Choose your plan</span>
+                    <h3 class="text-center">Our Pricing Packages</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 m-m3">
+                <div class="pricing pricing-01 text-center">
+                    <div class="pricing-title">
+                        <div class="section-title text-center">
+                            <h5 class="text-center">STANDARD PLAN</h5>
+                            <span>The best to start</span>
+                        </div>
+                        <div class="pricing-img">
+                            <img src="images/icon/06.png" alt="">
+                        </div>
+                        <div class="pricing-prize">
+                            <h2 class="text-black"><span>$ </span>20.99 <span>/PER MONTH</span></h2>
+                        </div>
+                    </div>
+                    <div class="pricing-list">
+                        <ul>
+                            <li>25 Analytics Compaign</li>
+                            <li>Branded Reports</li>
+                            <li>1,900 Keywords</li>
+                            <li>4 Social Account</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-order mt-3">
+                        <a class="button black" href="#">Purchase</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 m-m3">
+                <div class="pricing pricing-01 active text-center">
+                    <div class="pricing-title">
+                        <div class="section-title text-center">
+                            <h5 class="text-center">STANDARD PLAN</h5>
+                            <span>The best to start</span>
+                        </div>
+                        <div class="pricing-img">
+                            <img src="images/icon/05.png" alt="">
+                        </div>
+                        <div class="pricing-prize">
+                            <h2 class="text-black"><span>$ </span>20.99 <span>/PER MONTH</span></h2>
+                        </div>
+                    </div>
+                    <div class="pricing-list">
+                        <ul>
+                            <li>25 Analytics Compaign</li>
+                            <li>Branded Reports</li>
+                            <li>1,900 Keywords</li>
+                            <li>4 Social Account</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-order mt-3">
+                        <a class="button black active" href="#">Purchase</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing pricing-01 text-center">
+                    <div class="pricing-title">
+                        <div class="section-title text-center">
+                            <h5 class="text-center">STANDARD PLAN</h5>
+                            <span>The best to start</span>
+                        </div>
+                        <div class="pricing-img">
+                            <img src="images/icon/09.png" alt="">
+                        </div>
+                        <div class="pricing-prize">
+                            <h2 class="text-black"><span>$ </span>20.99 <span>/PER MONTH</span></h2>
+                        </div>
+                    </div>
+                    <div class="pricing-list">
+                        <ul>
+                            <li>25 Analytics Compaign</li>
+                            <li>Branded Reports</li>
+                            <li>1,900 Keywords</li>
+                            <li>4 Social Account</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-order mt-3">
+                        <a class="button black" href="#">Purchase</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--=================================
+pricing-packages -->
+
+<!--=================================
+our-clients -->
+<section class="our-clients page-section-pb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel" data-nav-dots="true" data-nav-arrow="false" data-items="5" data-md-items="4" data-sm-items="3" data-xs-items="2" data-xx-items="1" data-autoplay="false" data-loop="true">
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/06.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/07.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/08.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/09.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/10.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/06.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid center-block" src="images/clients/07.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+our-clients -->
+
 @endsection
 
 @section('footer_js')
+
+<script type="text/javascript">
+    var tpj = jQuery;
+    var revapi17;
+    tpj(document).ready(function() {
+        if (tpj("#rev_slider_17_1").revolution == undefined) {
+            revslider_showDoubleJqueryError("#rev_slider_17_1");
+        } else {
+            revapi17 = tpj("#rev_slider_17_1").show().revolution({
+                sliderType: "standard",
+                jsFileLocation: "revolution/js/",
+                sliderLayout: "auto",
+                dottedOverlay: "none",
+                delay: 5000,
+                navigation: {
+                    keyboardNavigation: "off",
+                    keyboard_direction: "vertical",
+                    mouseScrollNavigation: "off",
+                    mouseScrollReverse: "default",
+                    onHoverStop: "on",
+                    touch: {
+                        touchenabled: "on",
+                        swipe_threshold: 75,
+                        swipe_min_touches: 50,
+                        swipe_direction: "horizontal",
+                        drag_block_vertical: false
+                    },
+                    arrows: {
+                        style: "custom",
+                        enable: false,
+                        hide_onmobile: true,
+                        hide_under: 600,
+                        hide_onleave: true,
+                        hide_delay: 200,
+                        hide_delay_mobile: 1200,
+                        tmp: '',
+                        left: {
+                            h_align: "left",
+                            v_align: "center",
+                            h_offset: 30,
+                            v_offset: 0
+                        },
+                        right: {
+                            h_align: "right",
+                            v_align: "center",
+                            h_offset: 30,
+                            v_offset: 0
+                        }
+                    }
+                },
+                visibilityLevels: [1240, 1024, 778, 480],
+                gridwidth: 1270,
+                gridheight: 800,
+                lazyType: "smart",
+                parallax: {
+                    type: "mouse",
+                    origo: "slidercenter",
+                    speed: 2000,
+                    levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50, 47, 48, 49, 50, 51, 55],
+                    type: "mouse",
+                },
+                shadow: 0,
+                spinner: "spinner3",
+                stopLoop: "off",
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+                shuffle: "off",
+                autoHeight: "off",
+                hideThumbsOnMobile: "off",
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                debugMode: false,
+                fallbacks: {
+                    simplifyAll: "off",
+                    nextSlideOnWindowFocus: "off",
+                    disableFocusListener: false,
+                }
+            });
+        }
+    }); /*ready*/
+</script>
 
 @endsection
