@@ -8,8 +8,8 @@
                 <div class="col-md-4">
                     <div class="topbar-left text-center text-md-left">
                         <ul class="list-inline">
-                            <li> <i class="ti-location-pin"> </i> Manhattan, New York</li>
-                            <li> <i class="ti-headphone-alt"></i>+1 234 56789</li>
+                            <li> <i class="ti-location-pin"> </i> Carignano, Torino </li>
+                            {{-- <li> <i class="ti-headphone-alt"></i>+1 234 56789</li> --}}
                         </ul>
                     </div>
                 </div>
@@ -41,31 +41,35 @@
                             <!-- menu logo -->
                             <ul class="menu-logo">
                                 <li>
-                                    <a href="index-1.html"><img id="logo_img" src="images/logo-dark.png" alt="logo"> </a>
+                                    <a href="{{ route('home') }}"><img id="logo_img" src="{{ asset('img/Logo.png') }}"
+                                            alt="logo"> </a>
                                 </li>
                             </ul>
                             <!-- menu links -->
                             <ul class="menu-links">
                                 <!-- active class -->
-                                <li class="active"><a href="javascript:void(0)"> Home <i class="fa fa-angle-down fa-indicator"></i></a>
+                                <li class="active"><a href="javascript:void(0)"> Simulatori <i
+                                            class="fa fa-angle-down fa-indicator"></i></a>
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
-                                        <li class="active"><a href="index-1.html">home 01 </a></li>
-                                        <li><a href="index-2.html">home 02</a></li>
+                                        <li class="active"><a href="{{ route('home') }}">Simulatore Cucina</a></li>
+                                        {{-- <li><a href="index-2.html">home 02</a></li>
                                         <li><a href="index-3.html">home 03</a></li>
                                         <li><a href="index-4.html">home 04</a></li>
-                                        <li><a href="index-5.html">home 05</a></li>
+                                        <li><a href="index-5.html">home 05</a></li> --}}
                                     </ul>
                                 </li>
                                 <!-- active class -->
-                                <li><a href="javascript:void(0)"> services <i class="fa fa-angle-down fa-indicator"></i></a>
+                                {{-- <li><a href="javascript:void(0)"> services <i
+                                            class="fa fa-angle-down fa-indicator"></i></a>
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
                                         <li><a href="service-list-01.html">Service list 01 </a></li>
                                         <li><a href="service-list-02.html">Service list 02</a></li>
                                         <li><a href="analytics-services.html">Analytics Services</a></li>
                                         <li><a href="off-page-optimization.html">Off Page Optimization</a></li>
-                                        <li><a href="boost-your-conversion-rate.html">Boost Your Conversion Rate</a></li>
+                                        <li><a href="boost-your-conversion-rate.html">Boost Your Conversion Rate</a>
+                                        </li>
                                         <li><a href="search-engine-optimize.html">Search Engine Optimize</a></li>
                                         <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
                                     </ul>
@@ -94,8 +98,10 @@
                                                     <li><a href="team.html">team</a></li>
                                                     <li><a href="team-single.html">team single</a></li>
                                                     <li><a href="error-404.html">error 404</a></li>
-                                                    <li><a href="contact-single-office.html">contact single offices</a></li>
-                                                    <li><a href="contact-multiple-offices.html">contact multiple offices</a></li>
+                                                    <li><a href="contact-single-office.html">contact single offices</a>
+                                                    </li>
+                                                    <li><a href="contact-multiple-offices.html">contact multiple
+                                                            offices</a></li>
                                                     <li><a href="free-seo-analysis.html">free-seo-analysis</a></li>
                                                 </ul>
                                             </div>
@@ -116,7 +122,8 @@
                                                 <h4>page title</h4>
                                                 <ul>
                                                     <li><a href="page-title-image.html">page title image</a></li>
-                                                    <li><a href="page-title-dark-image.html">page title dark image</a></li>
+                                                    <li><a href="page-title-dark-image.html">page title dark image</a>
+                                                    </li>
                                                     <li><a href="page-title-dark.html">page title dark</a></li>
                                                     <li><a href="page-title-light.html">page title light</a></li>
                                                     <li><a href="page-title-fixed.html">page title fixed</a></li>
@@ -135,17 +142,22 @@
                                         <li><a href="blog-masonry-2-columns.html">Blog masonry 2 columns</a></li>
                                         <li><a href="blog-masonry-3-columns.html">Blog masonry 3 columns</a></li>
                                         <li><a href="blog-masonry-4-columns.html">Blog masonry 4 columns</a></li>
-                                        <li><a href="javascript:void(0)">Blog single <i class="fa fa-angle-right fa-indicator"></i></a>
+                                        <li><a href="javascript:void(0)">Blog single <i
+                                                    class="fa fa-angle-right fa-indicator"></i></a>
                                             <!-- drop down second level -->
                                             <ul class="drop-down-multilevel">
-                                                <li><a href="blog-single-image-post.html">blog single image post</a></li>
-                                                <li><a href="blog-single-blockquote-post.html">blog single blockquote post</a></li>
-                                                <li><a href="blog-single-video-post.html">blog single video post</a></li>
+                                                <li><a href="blog-single-image-post.html">blog single image post</a>
+                                                </li>
+                                                <li><a href="blog-single-blockquote-post.html">blog single blockquote
+                                                        post</a></li>
+                                                <li><a href="blog-single-video-post.html">blog single video post</a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0)">Case Studies <i class="fa fa-angle-down fa-indicator"></i></a>
+                                <li><a href="javascript:void(0)">Case Studies <i
+                                            class="fa fa-angle-down fa-indicator"></i></a>
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
                                         <li><a href="case-studies-2-columns.html">case studies 2 columns</a></li>
@@ -156,27 +168,25 @@
                                         <li><a href="case-studies-single.html">case studies single</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0)"> Shop <i class="fa fa-angle-down fa-indicator"></i> </a>
+                                <li><a href="javascript:void(0)"> Shop <i class="fa fa-angle-down fa-indicator"></i>
+                                    </a>
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="shop-single.html">Shop Single</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0)"> Contact us <i class="fa fa-angle-down fa-indicator"></i> </a>
+                                <li><a href="javascript:void(0)"> Contact us <i
+                                            class="fa fa-angle-down fa-indicator"></i> </a>
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
                                         <li><a href="contact-single-office.html">contact single office </a></li>
                                         <li><a href="contact-multiple-offices.html">contact multiple offices</a></li>
                                         <li><a href="free-seo-analysis.html">free seo analysis</a></li>
                                     </ul>
-                                </li>
-                                <li>
-                                    <div class="search-button">
-                                        <a class="search-trigger" href="#search"> <span></span></a>
-                                    </div>
-                                </li>
-                                <li class="side-menu-main">
+                                </li> --}}
+
+                                {{-- <li class="side-menu-main">
                                     <div class="side-menu">
                                         <div class="mobile-nav-button">
                                             <div class="mobile-nav-button-line"></div>
@@ -184,7 +194,7 @@
                                             <div class="mobile-nav-button-line"></div>
                                         </div>
                                     </div>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>

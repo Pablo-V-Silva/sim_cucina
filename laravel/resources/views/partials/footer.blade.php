@@ -2,56 +2,58 @@
 footer -->
 
 <footer class="footer footer-topbar page-section-pt">
-        <div class="container">
-            <div class="row top">
-                <div class="col-lg-3 col-md-2">
-                    <img class="img-fluid" src="images/logo-footer.png" alt="">
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="footer-nav text-right">
-                        <ul>
-                            <li><a href="index-1.html">Home</a></li>
-                            <li><a href="about-01.html">About us</a></li>
-                            <li><a href="service-list-01.html">Service</a></li>
-                            <li><a href="blog-right-sidebar.html">Blog</a></li>
-                            <li><a href="contact-single-office.html">Contact us</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="social text-right">
-                        <ul>
-                            <li>
-                                <a href="#"> <i class="fa fa-facebook"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-twitter"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-pinterest-p"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-dribbble"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-vimeo"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                            </li>
-                        </ul>
-                    </div>
+    <div class="container">
+        <div class="row top">
+            <div class="col-lg-3 col-md-2">
+                <img class="img-fluid" src="images/logo-footer.png" alt="">
+            </div>
+            <div class="col-lg-5 col-md-6">
+                <div class="footer-nav text-right">
+                    <ul>
+                        <li><a href="index-1.html">Home</a></li>
+                        <li><a href="about-01.html">About us</a></li>
+                        <li><a href="service-list-01.html">Service</a></li>
+                        <li><a href="blog-right-sidebar.html">Blog</a></li>
+                        <li><a href="contact-single-office.html">Contact us</a></li>
+                    </ul>
                 </div>
             </div>
-            <hr />
-            <div class="row">
-                <div class="col-lg-5 col-md-12">
-                    <div class="about-content">
-                        <h6 class="mb-2">about us</h6>
-                        <p>We attract your potential buyers from search and turn them intoyour customers. Qolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibham liber tempor cum soluta nobis eleifend option. sed diam nonummy nibham liber tempor cum soluta nobis eleifend option.</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="social text-right">
+                    <ul>
+                        <li>
+                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-twitter"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-pinterest-p"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-dribbble"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-vimeo"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-7 col-md-12">
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-5 col-md-12">
+                <div class="about-content">
+                    <h6 class="mb-2">about us</h6>
+                    <p>We attract your potential buyers from search and turn them intoyour customers. Qolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibham liber tempor cum soluta nobis eleifend
+                        option. sed diam nonummy nibham liber tempor cum soluta nobis eleifend option.</p>
+                </div>
+            </div>
+            {{-- <div class="col-lg-7 col-md-12">
                     <h6 class="mb-2">Usefull Links</h6>
                     <div class="usefull-link">
                         <div class="row">
@@ -96,9 +98,9 @@ footer -->
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-8">
+                </div> --}}
+        </div>
+        {{-- <div class="row mt-8">
                 <div class="col-md-4 bottom-m3">
                     <div class="contact-box">
                         <div class="contact-icon">
@@ -132,28 +134,28 @@ footer -->
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyright mt-6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-inline text-left">
-                           <li><a href="#">Terms & Conditions </a> &nbsp;&nbsp;&nbsp;|</li>
-                           <li><a href="#">API Use Policy </a> &nbsp;&nbsp;&nbsp;|</li>
-                           <li><a href="#">Privacy Policy </a> &nbsp;&nbsp;&nbsp;|</li>
-                           <li><a href="#">Cookies </a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="text-right">
-                            <p>Copyright © 2017 SEO Solution. All Rights Reserved.</p>
-                        </div>
+            </div> --}}
+    </div>
+    <div class="copyright mt-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-inline text-left">
+                        <li><a href="#">Terms & Conditions </a> &nbsp;&nbsp;&nbsp;|</li>
+                        <li><a href="#">API Use Policy </a> &nbsp;&nbsp;&nbsp;|</li>
+                        <li><a href="#">Privacy Policy </a> &nbsp;&nbsp;&nbsp;|</li>
+                        <li><a href="#">Cookies </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-right">
+                        <p>Copyright © 2017 SEO Solution. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 <!--=================================
 footer -->
