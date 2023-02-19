@@ -42,7 +42,9 @@
                 <select name="confronto" class="w-75 border-radius-2 py-2 my-1">
                     <option value="0" disabled selected>Seleziona...</option>
                     @foreach ($combustibili as $comb)
-                        <option value="{{ $comb->id }}">{{ $comb->tipo }}</option>
+                        <option value="{{ $comb->id }}">
+                            {{ $comb->tecnologia == null ? $comb->tipo : '(' . $comb->tecnologia . ')' }}
+                        </option>
                     @endforeach
                 </select>
                 <input type="hidden" name="persone" value="{{ $validate['persone'] }}">
