@@ -26,3 +26,7 @@ Route::get('/calcola-confronto', [CalcoloController::class, 'calcoloConfronta'])
 Route::get('/sethome', function(){
     return view('set.home');
 })->name('layoutHome');
+
+Route::get('/vuetest', function(){
+    return view('vueTest');
+});
