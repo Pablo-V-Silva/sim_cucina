@@ -19484,16 +19484,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Test",
   data: function data() {
-    return {};
+    return {
+      combustibili: null
+    };
   },
   mounted: function mounted() {
-    var test;
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/combustibili").then(function (r) {
-      console.log(r);
-    });
+    this.getDataForInputs();
   },
-  methods: {},
-  computed: {},
+  methods: {
+    getDataForInputs: function getDataForInputs() {
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/combustibili").then(function (r) {
+        _this.combustibili = r.data.combustibili;
+      });
+    },
+    executeCalc: function executeCalc() {
+      var tipocomb = document.getElementById('tipocomb').value;
+      /* console.log(tipo); */
+      var persone = document.getElementById('persone').value;
+      /* console.log(persone); */
+      var tipo = document.getElementById('tipo').value;
+      if (tipocomb == null || tipo == null || persone == null) {
+        console.error('Missing Parameters');
+      } else {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/calcolo/' + tipocomb + '/' + persone + '/' + tipo).then(function (r) {
+          console.log(r);
+        });
+      }
+    }
+  },
+  computed: {
+    getCombustibili: function getCombustibili() {
+      console.log(this.combustibili);
+      return this.combustibili;
+    }
+  },
   created: function created() {}
 });
 
@@ -19518,10 +19543,37 @@ var _hoisted_1 = {
     "background-color": "#00000030"
   }
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"page-title\"><h1>Qui ci va il titolo</h1></div><div class=\"form-container\"><div class=\"row\"><div class=\"col-12\"><h4>Scegli il tipo di combustibile</h4><select name=\"\" id=\"\"><option value=\"#\">test</option></select></div></div><div class=\"row\"><div class=\"col-12\"><h4>Inserisci il numero di persone in casa</h4><input type=\"num\" id=\"persone\"></div></div><div class=\"row\"><div class=\"col-12\"><h4>Scegli il tipo di consumo</h4><select name=\"tipo\" id=\"tipo\"><option value=\"0\" disabled selected>Seleziona</option><option value=\"basso\">Bassa</option><option value=\"medio\">Media</option><option value=\"alto\">Alta</option></select></div></div><button id=\"calcolabtn\">Calcola</button></div>", 2);
-var _hoisted_4 = [_hoisted_2];
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "page-title"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Qui ci va il titolo")], -1 /* HOISTED */);
+var _hoisted_3 = {
+  "class": "form-container"
+};
+var _hoisted_4 = {
+  "class": "row"
+};
+var _hoisted_5 = {
+  "class": "col-12"
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Scegli il tipo di combustibile", -1 /* HOISTED */);
+var _hoisted_7 = {
+  name: "tipo",
+  id: "tipocomb"
+};
+var _hoisted_8 = ["value"];
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><div class=\"col-12\"><h4>Inserisci il numero di persone in casa</h4><input type=\"num\" id=\"persone\"></div></div><div class=\"row\"><div class=\"col-12\"><h4>Scegli il tipo di consumo</h4><select name=\"tipo\" id=\"tipo\"><option value=\"0\" disabled selected>Seleziona</option><option value=\"basso\">Bassa</option><option value=\"medio\">Media</option><option value=\"alto\">Alta</option></select></div></div>", 2);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
+  var _this = this;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.getCombustibili, function (combustibile) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: combustibile.tipo,
+      value: combustibile.id
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(combustibile.tipo), 9 /* TEXT, PROPS */, _hoisted_8);
+  }), 128 /* KEYED_FRAGMENT */))])])]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return _this.executeCalc();
+    })
+  }, "Calcola")])]);
 }
 
 /***/ }),

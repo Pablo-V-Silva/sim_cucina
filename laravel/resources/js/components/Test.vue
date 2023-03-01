@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-12">
                     <h4>Scegli il tipo di combustibile</h4>
-                    <select name="" id="">
-                        <option value="#">test</option>
+                    <select name="tipo" id="tipocomb">
+                        <option v-for="combustibile in getCombustibili" :key="combustibile.tipo" :value="combustibile.id">{{combustibile.tipo}}</option>
                     </select>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <button id="calcolabtn">Calcola</button>
+            <button v-on:click="this.executeCalc()">Calcola</button>
         </div>
     </div>
 </template>
@@ -41,27 +41,50 @@ export default {
     name: "Test",
     data() {
         return {
-
+            combustibili: null
         }
     },
 
     mounted() {
-        let test;
-        axios
+        this.getDataForInputs();
+    },
+
+    methods: {
+        getDataForInputs(){
+            axios
           .get(
             "/api/combustibili"
           )
           .then((r) => {
-            console.log(r);
+            this.combustibili = r.data.combustibili;
           });
-    },
+        },
 
-    methods: {
-        
+        executeCalc(){
+            let tipocomb = document.getElementById('tipocomb').value;
+            /* console.log(tipo); */
+            let persone = document.getElementById('persone').value;
+            /* console.log(persone); */
+            let tipo = document.getElementById('tipo').value;
+
+            if(tipocomb == null || tipo == null || persone == null){
+                console.error('Missing Parameters');
+            }else{
+                axios.get(
+                    '/api/calcolo/'+ tipocomb + '/' + persone + '/' + tipo
+                )
+                .then((r)=>{
+                    console.log(r);
+                })
+            }
+        }
     },
 
     computed: {
-        
+        getCombustibili(){
+            console.log(this.combustibili)
+            return this.combustibili;
+        }
     },
 
     created() {

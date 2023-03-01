@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/combustibili', [CalcoloApi::class, 'getData']);
+
+Route::get('/calcolo/{tipocomb}/{persone}/{tipo}', [CalcoloApi::class, 'calcCons']);
