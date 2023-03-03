@@ -42,7 +42,10 @@
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
-                                @guest
+                                {{--
+
+                                  versione precedente
+                                   @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -75,6 +78,36 @@
                                             </form>
                                         </div>
                                     </li>
+                                @endguest --}}
+
+                                @guest
+
+
+                                    <a href="{{ route('login') }}"> {{ __('Login') }} </a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    @endif
+                                @else
+                                    <span>{{ Auth::user()->name }}</span>
+                                    <a href="{{ route('logout') }}">
+
+
+                                    </a>
+
+                                    </span>
+
+
+
+                                    <a class="" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                                                                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
                                 @endguest
                             </ul>
                         </div>
