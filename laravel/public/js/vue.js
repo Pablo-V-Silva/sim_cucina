@@ -19488,7 +19488,10 @@ __webpack_require__.r(__webpack_exports__);
       combustibili: null,
       calc: false,
       consGiornaliero: null,
-      spesaGiornaliera: null
+      spesaGiornaliera: null,
+      combustibile: null,
+      persone: null,
+      tipoCons: null
     };
   },
   mounted: function mounted() {
@@ -19503,21 +19506,31 @@ __webpack_require__.r(__webpack_exports__);
     },
     executeCalc: function executeCalc() {
       var _this2 = this;
-      var tipocomb = document.getElementById('tipocomb').value;
-      /* console.log(tipo); */
-      var persone = document.getElementById('persone').value;
-      /* console.log(persone); */
-      var tipo = document.getElementById('tipo').value;
-      if (tipocomb == null || tipo == null || persone == null) {
+      if (this.combustibile == null || this.tipoCons == null || this.persone == null) {
         console.error('Missing Parameters');
       } else {
-        axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/calcolo/' + tipocomb + '/' + persone + '/' + tipo).then(function (r) {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/calcolo/' + this.combustibile + '/' + this.persone + '/' + this.tipoCons).then(function (r) {
           /* console.log(r); */
           _this2.spesaGiornaliera = r.data.spesa_tot_giornaliera;
           _this2.consGiornaliero = r.data.cons_tot_giornaliero;
           _this2.calc = true;
+          var resultContainer = document.getElementById('result').offsetTop;
+          window.scrollTo({
+            top: resultContainer,
+            behavior: 'smooth'
+          });
         });
       }
+    },
+    setCombustibile: function setCombustibile(id) {
+      this.combustibile = id;
+    },
+    setConsumo: function setConsumo(value) {
+      this.tipoCons = value;
+    },
+    setPersone: function setPersone() {
+      var value = document.getElementById('persone').value;
+      this.persone = value;
     }
   },
   computed: {
@@ -19559,13 +19572,16 @@ var _hoisted_1 = {
     "background-color": "#00000030"
   }
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
+var _hoisted_2 = {
   "class": "testimonial page-section-ptb blue-bg"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_3 = {
   "class": "container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_4 = {
   "class": "row justify-content-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "section-title text-center"
@@ -19573,89 +19589,77 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "text-white"
 }, "they say we did great job!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-center text-white"
-}, "Our Customers feedback")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-lg-8 col-md-12 testimonial-bg py-4 form-container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, "Our Customers feedback")])], -1 /* HOISTED */);
+var _hoisted_6 = {
+  "class": "col-md-12 testimonial-bg py-4 form-container"
+};
+var _hoisted_7 = {
   "class": "testimonial-bg-inner mt-0"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_8 = {
   "class": "_owl-carousel"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_9 = {
   "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_10 = {
   "class": "testimonial text-center py-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "nav nav-tabs round justify-content-center",
+};
+var _hoisted_11 = {
+  "class": "input-container"
+};
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "mb-4"
+}, "Scegli il tipo di combustibile", -1 /* HOISTED */);
+var _hoisted_13 = {
+  "class": "nav nav-tabs justify-content-center mb-4",
   role: "tablist"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+var _hoisted_14 = ["onClick"];
+var _hoisted_15 = {
+  "class": "input-container"
+};
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "mb-4"
+}, "Digita il numero di persone in casa", -1 /* HOISTED */);
+var _hoisted_17 = {
+  "class": "input-container"
+};
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "mb-4"
+}, "Scegli il tipo di consumo", -1 /* HOISTED */);
+var _hoisted_19 = {
+  "class": "nav nav-tabs justify-content-center mb-4",
+  role: "tablist"
+};
+var _hoisted_20 = {
   role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "active",
-  href: "#all-faqs",
-  "aria-controls": "all-faqs",
-  role: "tab",
-  "data-toggle": "tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-credit-card"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+var _hoisted_21 = {
   role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#tab-01",
-  "aria-controls": "tab-01",
-  role: "tab",
-  "data-toggle": "tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-dashboard"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+var _hoisted_22 = {
   role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#tab-02",
-  "aria-controls": "tab-02",
-  role: "tab",
-  "data-toggle": "tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-package"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#tab-03",
-  "aria-controls": "tab-03",
-  role: "tab",
-  "data-toggle": "tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-world"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#tab-04",
-  "aria-controls": "tab-04",
-  role: "tab",
-  "data-toggle": "tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-comment-alt"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#tab-04",
-  "aria-controls": "tab-04",
-  role: "tab",
-  "data-toggle": "tab"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "ti-location-arrow"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"option\">\r\n                                            <h4 class=\"text-blue\">Scegli il tipo di combustibile</h4>\r\n                                            <div class=\"combustibile\" v-for=\"combustibile in getCombustibili\"\r\n                                                :key=\"combustibile.tipo\">\r\n                                                <label for=\"tipocomb\">{{ combustibile.tipo }} {{\r\n                                                        combustibile.tecnologia != '' ?\r\n                                                        '(' +\r\n                                                        combustibile.tecnologia + ')' : '' }}</label>\r\n                                                <input type=\"radio\" name=\"tipocomb\" id=\"tipocomb\" :value=\"combustibile.id\">\r\n\r\n                                            </div>\r\n\r\n                                            <select name=\"tipo\" id=\"tipocomb\" class=\"form-input\">\r\n                                                <option v-for=\"combustibile in getCombustibili\" :key=\"combustibile.tipo\"\r\n                                                    :value=\"combustibile.id\">{{ combustibile.tipo }} {{\r\n                                                        combustibile.tecnologia != '' ?\r\n                                                        '(' +\r\n                                                        combustibile.tecnologia + ')' : '' }}</option>\r\n                                            </select>\r\n                                        </div>\r\n                                        <div class=\"option\">\r\n                                            <h4 class=\"text-blue\">Inserisci il numero di persone in casa</h4>\r\n                                            <input type=\"num\" id=\"persone\" class=\"form-control form-input\">\r\n                                        </div>\r\n                                        <div class=\"option\">\r\n                                            <h4 class=\"text-blue\">Scegli il tipo di consumo</h4>\r\n                                            <select name=\"tipo\" id=\"tipo\" class=\"form-input\">\r\n                                                <option value=\"0\" disabled selected>Seleziona</option>\r\n                                                <option value=\"basso\">Bassa</option>\r\n                                                <option value=\"medio\">Media</option>\r\n                                                <option value=\"alto\">Alta</option>\r\n                                            </select>\r\n                                        </div> ")])])])])])])])], -1 /* HOISTED */);
-var _hoisted_3 = {
+};
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Calcola", -1 /* HOISTED */);
+var _hoisted_24 = [_hoisted_23];
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  id: "result"
+}, null, -1 /* HOISTED */);
+var _hoisted_26 = {
   key: 0,
   "class": "tab-page page-section-ptb"
 };
-var _hoisted_4 = {
+var _hoisted_27 = {
   "class": "container"
 };
-var _hoisted_5 = {
+var _hoisted_28 = {
   "class": "row"
 };
-var _hoisted_6 = {
+var _hoisted_29 = {
   "class": "col-md-12"
 };
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "nav nav-tabs justify-content-center",
   role: "tablist"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
@@ -19673,206 +19677,121 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "aria-controls": "ecommerce",
   role: "tab",
   "data-toggle": "tab"
-}, "Ecommerce")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#smm",
-  "aria-controls": "smm",
-  role: "tab",
-  "data-toggle": "tab"
-}, "SMM")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#technology",
-  "aria-controls": "technology",
-  role: "tab",
-  "data-toggle": "tab"
-}, "Technology")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#services",
-  "aria-controls": "services",
-  role: "tab",
-  "data-toggle": "tab"
-}, "B2B Services")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  role: "presentation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#seo",
-  "aria-controls": "seo",
-  role: "tab",
-  "data-toggle": "tab"
-}, "SEO")])], -1 /* HOISTED */);
-var _hoisted_8 = {
+}, "Spesa")])], -1 /* HOISTED */);
+var _hoisted_31 = {
   "class": "tab-content"
 };
-var _hoisted_9 = {
+var _hoisted_32 = {
   role: "tabpanel",
   "class": "tab-pane active",
   id: "all"
 };
-var _hoisted_10 = {
+var _hoisted_33 = {
   "class": "row"
 };
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-6 align-self-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   "class": "img-fluid",
   src: "images/device/10.png",
   alt: ""
 })], -1 /* HOISTED */);
-var _hoisted_12 = {
+var _hoisted_35 = {
   "class": "col-md-6"
 };
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "mb-2"
 }, "Consumi", -1 /* HOISTED */);
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-2"
 }, "qui ci va un testo descrittovp di circa 2 o 3 righe", -1 /* HOISTED */);
-var _hoisted_15 = {
+var _hoisted_38 = {
   "class": "list-mark"
 };
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Giornaliero:", -1 /* HOISTED */);
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Settimanale:", -1 /* HOISTED */);
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Mensile:", -1 /* HOISTED */);
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Annuale:", -1 /* HOISTED */);
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "button mt-3",
-  href: "#"
-}, "SEE ALL FEATURES", -1 /* HOISTED */);
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Giornaliero:", -1 /* HOISTED */);
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Settimanale:", -1 /* HOISTED */);
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Mensile:", -1 /* HOISTED */);
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Consumo Annuale:", -1 /* HOISTED */);
+var _hoisted_43 = {
   role: "tabpanel",
   "class": "tab-pane fade",
   id: "ecommerce"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_44 = {
   "class": "row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-6 pull-right align-self-center order-md-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   "class": "img-fluid",
   src: "images/device/11.png",
   alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+})], -1 /* HOISTED */);
+var _hoisted_46 = {
   "class": "col-md-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+};
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "mb-2"
-}, "Content submission"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+}, "Spesa", -1 /* HOISTED */);
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-2"
-}, "Typesetting industry lorem Ipsum is simply dummy text of the printing and. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Printing and typesetting lorem Ipsum is simply dummy text of the industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+}, "qui ci va un testo descrittovp di circa 2 o 3 righe", -1 /* HOISTED */);
+var _hoisted_49 = {
   "class": "list-mark"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Ipsum has been the industry's random text."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Industry's random text ipsum has been the."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Been the ipsum has industry's random text.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "button mt-3",
-  href: "#"
-}, "SEE ALL FEATURES")])])], -1 /* HOISTED */);
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  role: "tabpanel",
-  "class": "tab-pane fade",
-  id: "smm"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6 align-self-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "img-fluid",
-  src: "images/device/12.png",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "mb-2"
-}, "Real-time analytics"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Typesetting industry lorem Ipsum is simply dummy text of the printing and. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Printing and typesetting lorem Ipsum is simply dummy text of the industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "list-mark"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Ipsum has been the industry's random text."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Industry's random text ipsum has been the."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Been the ipsum has industry's random text.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "button mt-3",
-  href: "#"
-}, "SEE ALL FEATURES")])])], -1 /* HOISTED */);
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  role: "tabpanel",
-  "class": "tab-pane fade",
-  id: "technology"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6 pull-right align-self-center order-md-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "img-fluid",
-  src: "images/device/13.png",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "mb-2"
-}, "Usa based seo company"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Typesetting industry lorem Ipsum is simply dummy text of the printing and. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Printing and typesetting lorem Ipsum is simply dummy text of the industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "list-mark"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Ipsum has been the industry's random text."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Industry's random text ipsum has been the."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Been the ipsum has industry's random text.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "button mt-3",
-  href: "#"
-}, "SEE ALL FEATURES")])])], -1 /* HOISTED */);
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  role: "tabpanel",
-  "class": "tab-pane fade",
-  id: "services"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6 align-self-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "img-fluid",
-  src: "images/device/14.png",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "mb-2"
-}, "100% white hat ethics"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Typesetting industry lorem Ipsum is simply dummy text of the printing and. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Printing and typesetting lorem Ipsum is simply dummy text of the industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "list-mark"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Ipsum has been the industry's random text."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Industry's random text ipsum has been the."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Been the ipsum has industry's random text.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "button mt-3",
-  href: "#"
-}, "SEE ALL FEATURES")])])], -1 /* HOISTED */);
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  role: "tabpanel",
-  "class": "tab-pane fade",
-  id: "seo"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6 pull-right align-self-center order-md-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "img-fluid",
-  src: "images/device/15.png",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "mb-2"
-}, "Reputation management"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Typesetting industry lorem Ipsum is simply dummy text of the printing and. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2"
-}, "Printing and typesetting lorem Ipsum is simply dummy text of the industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "list-mark"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Ipsum has been the industry's random text."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Industry's random text ipsum has been the."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "Been the ipsum has industry's random text.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "button mt-3",
-  href: "#"
-}, "SEE ALL FEATURES")])])], -1 /* HOISTED */);
+};
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Spesa Giornaliera:", -1 /* HOISTED */);
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Spesa Settimanale:", -1 /* HOISTED */);
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Spesa Mensile:", -1 /* HOISTED */);
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Spesa Annuale:", -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"container\">\r\n            <div class=\"page-title\">\r\n                <h1>Qui ci va il titolo</h1>\r\n            </div>\r\n            <div class=\"form-container\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-12\">\r\n                        <h4 class=\"text-blue\">Scegli il tipo di combustibile</h4>\r\n                        <select name=\"tipo\" id=\"tipocomb\">\r\n                            <option v-for=\"combustibile in getCombustibili\" :key=\"combustibile.tipo\"\r\n                                :value=\"combustibile.id\">{{ combustibile.tipo }} {{ combustibile.tecnologia != '' ? '(' +\r\n                                    combustibile.tecnologia + ')' : '' }}</option>\r\n                        </select>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-12\">\r\n                        <h4>Inserisci il numero di persone in casa</h4>\r\n                        <input type=\"num\" id=\"persone\" class=\"form-control\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-12\">\r\n                        <h4>Scegli il tipo di consumo</h4>\r\n                        <select name=\"tipo\" id=\"tipo\">\r\n                            <option value=\"0\" disabled selected>Seleziona</option>\r\n                            <option value=\"basso\">Bassa</option>\r\n                            <option value=\"medio\">Media</option>\r\n                            <option value=\"alto\">Alta</option>\r\n                        </select>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col-12\">\r\n                        <button class=\"button\" v-on:click=\"this.executeCalc()\"><span>Calcola</span></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div> "), $options.isCalc == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav tabs "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tab panes "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getConsGiornaliero), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getConsGiornaliero * 7), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getConsGiornaliero * 30), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getConsGiornaliero * 365), 1 /* TEXT */)])]), _hoisted_20])])]), _hoisted_21, _hoisted_22, _hoisted_23, _hoisted_24, _hoisted_25])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"calcolo-container\" v-if=\"isCalc == true\">\r\n            <h3>Consumo medio giornaliero</h3>\r\n            <p><strong>{{ getSpesaGiornaliera }}</strong></p>\r\n            <h3>Spesa media Giornaliera</h3>\r\n            <p><strong>{{ getConsGiornaliero }}</strong></p>\r\n        </div> ")]);
+  var _this = this;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_13, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.getCombustibili, function (combustibile) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      role: "presentation",
+      key: combustibile.tipo
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      onClick: function onClick($event) {
+        return $options.setCombustibile(combustibile.id);
+      },
+      "aria-controls": "all",
+      role: "tab",
+      "data-toggle": "tab"
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(combustibile.tipo) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(combustibile.tecnologia != '' ? '(' + combustibile.tecnologia + ')' : ''), 9 /* TEXT, PROPS */, _hoisted_14)]);
+  }), 128 /* KEYED_FRAGMENT */))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "num",
+    id: "persone",
+    onKeyup: _cache[0] || (_cache[0] = function ($event) {
+      return $options.setPersone();
+    }),
+    "class": "form-control form-input"
+  }, null, 32 /* HYDRATE_EVENTS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.setConsumo('basso');
+    }),
+    "aria-controls": "all",
+    role: "tab",
+    "data-toggle": "tab"
+  }, "Basso")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return $options.setConsumo('medio');
+    }),
+    "aria-controls": "all",
+    role: "tab",
+    "data-toggle": "tab"
+  }, "Medio")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[3] || (_cache[3] = function ($event) {
+      return $options.setConsumo('alto');
+    }),
+    "aria-controls": "all",
+    role: "tab",
+    "data-toggle": "tab"
+  }, "Alto")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "button",
+    onClick: _cache[4] || (_cache[4] = function ($event) {
+      return _this.executeCalc();
+    })
+  }, _hoisted_24)])])])])])])])]), _hoisted_25, $options.isCalc == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Nav tabs "), _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tab panes "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getConsGiornaliero) + " KW", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(($options.getConsGiornaliero * 7).toFixed(2)) + " KW", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(($options.getConsGiornaliero * 30).toFixed(2)) + " KW", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(($options.getConsGiornaliero * 365).toFixed(2)) + " KW", 1 /* TEXT */)])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_hoisted_47, _hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getSpesaGiornaliera) + " Euro", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(($options.getSpesaGiornaliera * 7).toFixed(2)) + " Euro", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_52, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(($options.getSpesaGiornaliera * 30).toFixed(2)) + " Euro", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(($options.getSpesaGiornaliera * 365).toFixed(2)) + " Euro", 1 /* TEXT */)])])])])])])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -19894,7 +19813,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".vue-container p,\n.vue-container li {\n  color: #353535;\n}\n.vue-container .form-container input,\n.vue-container .form-container select {\n  border-radius: 30px;\n  height: auto;\n  line-height: 1.33333;\n  padding: 15px 18px 15px 30px;\n  background: #fff;\n  color: #353535;\n  border: 1px solid rgba(0, 0, 0, 0.1882352941);\n  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);\n  margin-bottom: 1rem;\n}\n.vue-container .form-container button {\n  width: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".vue-container p,\n.vue-container li {\n  color: #353535;\n}\n.vue-container .form-container input,\n.vue-container .form-container select {\n  border-radius: 30px;\n  height: auto;\n  line-height: 1.33333;\n  padding: 15px 18px 15px 30px;\n  background: #fff;\n  color: #353535;\n  border: 1px solid rgba(0, 0, 0, 0.1882352941);\n  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);\n  margin-bottom: 1rem;\n}\n.vue-container .form-container button {\n  width: 100%;\n}\n.vue-container .form-container .nav-tabs li a {\n  border: 1px solid rgba(0, 0, 0, 0.1882352941);\n  cursor: pointer;\n}\n.vue-container .form-container input.form-control {\n  width: unset;\n  margin: 0 auto;\n  margin-bottom: 1.5rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
