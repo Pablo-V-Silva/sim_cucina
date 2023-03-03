@@ -30,3 +30,7 @@ Route::get('/sethome', function(){
 Route::get('/vuetest', function(){
     return view('vueTest');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
