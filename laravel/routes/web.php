@@ -17,20 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 
+
 Route::get('/calcola', [CalcoloController::class, 'calcoloCucina'])->name('calcola_cucina');
 
 Route::get('/confronta', [CalcoloController::class, 'confrontaCucina'])->name('confronta_cucina');
 
 Route::get('/calcola-confronto', [CalcoloController::class, 'calcoloConfronta'])->name('calcola_confronto');
 
-Route::get('/sethome', function(){
-    return view('set.home');
+Route::get('/sethome', function () {
+  return view('set.home');
 })->name('layoutHome');
 
-Route::get('/vuetest', function(){
-    return view('vueTest');
+Route::get('/vuetest', function () {
+  return view('vueTest');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');

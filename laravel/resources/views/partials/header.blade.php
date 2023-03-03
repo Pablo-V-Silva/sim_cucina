@@ -131,8 +131,8 @@
                             <!-- menu logo -->
                             <ul class="menu-logo">
                                 <li>
-                                    <a href="{{ route('home') }}"><img id="logo_img"
-                                            src="{{ asset('img/Logo.png') }}" alt="logo"> </a>
+                                    <a href="{{ url('/') }}"><img id="logo_img"
+                                            src="{{ asset('img/Logo.png') }}" alt="logo"> bubbaaaa</a>
                                 </li>
                             </ul>
                             <!-- menu links -->
@@ -142,7 +142,8 @@
                                             class="fa fa-angle-down fa-indicator"></i></a>
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
-                                        <li class="active"><a href="{{ route('home') }}">Simulatore Cucina</a></li>
+                                        <li class="active"><a href="{{ url('/') }}">bubba Simulatore Cucina</a>
+                                        </li>
                                         {{-- <li><a href="index-2.html">home 02</a></li>
                                         <li><a href="index-3.html">home 03</a></li>
                                         <li><a href="index-4.html">home 04</a></li>
