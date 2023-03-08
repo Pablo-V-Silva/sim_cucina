@@ -18,4 +18,8 @@ class Combustibile extends Model
     public function consumo(): HasMany {
         return $this->hasMany(Consumo::class);
     }
+
+    public function sessioni(): HasMany {
+        return $this->hasMany(Sessione::class);
+    }
 }

@@ -5,7 +5,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         <div class="section-title text-center">
-                            <span class="text-white">they say we did great job!</span>
+                            <span class="text-white">they say we did great job!!!</span>
                             <h3 class="text-center text-white">Our Customers feedback</h3>
                         </div>
                     </div>
@@ -18,8 +18,9 @@
                                             <h4 class="mb-4">Scegli il tipo di combustibile</h4>
                                             <ul class="nav nav-tabs justify-content-center mb-4" role="tablist">
                                                 <li role="presentation" v-for="combustibile in getCombustibili"
-                                                    :key="combustibile.tipo"><a v-on:click="setCombustibile(combustibile.id)" aria-controls="all" role="tab"
-                                                        data-toggle="tab">{{ combustibile.tipo }} {{
+                                                    :key="combustibile.tipo"><a
+                                                        v-on:click="setCombustibile(combustibile.id)" aria-controls="all"
+                                                        role="tab" data-toggle="tab">{{ combustibile.tipo }} {{
                                                             combustibile.tecnologia != '' ?
                                                             '(' +
                                                             combustibile.tecnologia + ')' : '' }}</a></li>
@@ -27,17 +28,18 @@
                                         </div>
                                         <div class="input-container">
                                             <h4 class="mb-4">Digita il numero di persone in casa</h4>
-                                            <input type="num" id="persone" v-on:keyup="setPersone()" class="form-control form-input">
+                                            <input type="num" id="persone" v-on:keyup="setPersone()"
+                                                class="form-control form-input">
                                         </div>
                                         <div class="input-container">
                                             <h4 class="mb-4">Scegli il tipo di consumo</h4>
                                             <ul class="nav nav-tabs justify-content-center mb-4" role="tablist">
-                                                <li role="presentation"><a v-on:click="setConsumo('basso')" aria-controls="all" role="tab"
-                                                        data-toggle="tab">Basso</a></li>
-                                                <li role="presentation"><a v-on:click="setConsumo('medio')" aria-controls="all" role="tab"
-                                                        data-toggle="tab">Medio</a></li>
-                                                <li role="presentation"><a v-on:click="setConsumo('alto')" aria-controls="all" role="tab"
-                                                        data-toggle="tab">Alto</a></li>
+                                                <li role="presentation"><a v-on:click="setConsumo('basso')"
+                                                        aria-controls="all" role="tab" data-toggle="tab">Basso</a></li>
+                                                <li role="presentation"><a v-on:click="setConsumo('medio')"
+                                                        aria-controls="all" role="tab" data-toggle="tab">Medio</a></li>
+                                                <li role="presentation"><a v-on:click="setConsumo('alto')"
+                                                        aria-controls="all" role="tab" data-toggle="tab">Alto</a></li>
                                             </ul>
                                         </div>
                                         <button class="button" v-on:click="this.executeCalc()"><span>Calcola</span></button>
@@ -56,14 +58,16 @@
                     <div class="col-md-12">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs justify-content-center" role="tablist">
-                            <li role="presentation"><a class="active" href="#all" aria-controls="all" role="tab"
+                            <li role="presentation"><a class="active" href="#consumo" aria-controls="consumo" role="tab"
                                     data-toggle="tab">Consumo</a></li>
-                            <li role="presentation"><a href="#ecommerce" aria-controls="ecommerce" role="tab"
+                            <li role="presentation"><a href="#spesa" aria-controls="spesa" role="tab"
                                     data-toggle="tab">Spesa</a></li>
+                            <li role="presentation"><a href="#seo" aria-controls="seo" role="tab"
+                                    data-toggle="tab">Confronta</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="all">
+                            <div role="tabpanel" class="tab-pane active" id="consumo">
                                 <div class="row">
                                     <div class="col-md-6 align-self-center">
                                         <img class="img-fluid" src="images/device/10.png" alt="">
@@ -74,14 +78,17 @@
 
                                         <ul class="list-mark">
                                             <li><strong>Consumo Giornaliero:</strong> {{ getConsGiornaliero }} KW</li>
-                                            <li><strong>Consumo Settimanale:</strong> {{ (getConsGiornaliero * 7).toFixed(2) }} KW</li>
-                                            <li><strong>Consumo Mensile:</strong> {{ (getConsGiornaliero * 30).toFixed(2) }} KW</li>
-                                            <li><strong>Consumo Annuale:</strong> {{ (getConsGiornaliero * 365).toFixed(2) }} KW</li>
+                                            <li><strong>Consumo Settimanale:</strong> {{ (getConsGiornaliero * 7).toFixed(2)
+                                            }} KW</li>
+                                            <li><strong>Consumo Mensile:</strong> {{ (getConsGiornaliero * 30).toFixed(2) }}
+                                                KW</li>
+                                            <li><strong>Consumo Annuale:</strong> {{ (getConsGiornaliero * 365).toFixed(2)
+                                            }} KW</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="ecommerce">
+                            <div role="tabpanel" class="tab-pane fade" id="spesa">
                                 <div class="row">
                                     <div class="col-md-6 pull-right align-self-center order-md-2 ">
                                         <img class="img-fluid" src="images/device/11.png" alt="">
@@ -89,13 +96,28 @@
                                     <div class="col-md-6">
                                         <h5 class="mb-2">Spesa</h5>
                                         <p class="mb-2">qui ci va un testo descrittovp di circa 2 o 3 righe</p>
-                            
+
                                         <ul class="list-mark">
                                             <li><strong>Spesa Giornaliera:</strong> {{ getSpesaGiornaliera }} Euro</li>
-                                            <li><strong>Spesa Settimanale:</strong> {{ (getSpesaGiornaliera * 7).toFixed(2) }} Euro</li>
-                                            <li><strong>Spesa Mensile:</strong> {{ (getSpesaGiornaliera * 30).toFixed(2) }} Euro</li>
-                                            <li><strong>Spesa Annuale:</strong> {{ (getSpesaGiornaliera * 365).toFixed(2) }} Euro</li>
+                                            <li><strong>Spesa Settimanale:</strong> {{ (getSpesaGiornaliera * 7).toFixed(2)
+                                            }} Euro</li>
+                                            <li><strong>Spesa Mensile:</strong> {{ (getSpesaGiornaliera * 30).toFixed(2) }}
+                                                Euro</li>
+                                            <li><strong>Spesa Annuale:</strong> {{ (getSpesaGiornaliera * 365).toFixed(2) }}
+                                                Euro</li>
                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="seo">
+                                <div class="row">
+                                    <div class="col-md-6 align-self-center">
+                                        <img class="img-fluid" src="images/device/10.png" alt="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mb-2">Confronta</h5>
+                                        <p class="mb-2">qui ci va un testo descrittovp di circa 2 o 3 righe</p>
+                                        <a class="button mt-3" href="/confronto">Vai alla pagina del confronto</a>
                                     </div>
                                 </div>
                             </div>
@@ -152,20 +174,20 @@ export default {
                         this.consGiornaliero = r.data.cons_tot_giornaliero;
                         this.calc = true;
                         let resultContainer = document.getElementById('result').offsetTop;
-                        window.scrollTo({top: resultContainer, behavior: 'smooth'});
+                        window.scrollTo({ top: resultContainer, behavior: 'smooth' });
                     })
             }
         },
 
-        setCombustibile(id){
+        setCombustibile(id) {
             this.combustibile = id;
         },
 
-        setConsumo(value){
+        setConsumo(value) {
             this.tipoCons = value;
         },
 
-        setPersone(){
+        setPersone() {
             let value = document.getElementById('persone').value;
             this.persone = value;
         }
@@ -234,7 +256,7 @@ export default {
             }
         }
 
-        input.form-control{
+        input.form-control {
             width: unset;
             margin: 0 auto;
             margin-bottom: 1.5rem;

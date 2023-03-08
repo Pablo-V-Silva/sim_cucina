@@ -13,4 +13,8 @@ class PageController extends Controller
         $is_calc = false;
         return view('home', compact('combustibili', 'is_calc'));
     }
+
+    public function redToConfrontoPage(){
+        return view('vueConfronto');
+    }
 }

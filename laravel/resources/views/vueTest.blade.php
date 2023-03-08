@@ -12,7 +12,7 @@
 
 @section('header_js')
 
-<script src="{{asset('js/vue.js')}}" defer></script>
+<script src="{{asset('js/app.js')}}" defer></script>
 @endsection
 
 @section('footer_js')
