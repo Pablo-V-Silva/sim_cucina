@@ -1,0 +1,35 @@
+main{
+
+    .page-section-ptb{
+
+        .profile-img-container{
+            display: flex;
+            align-items: center;
+
+            #profile_img{
+                width: 100%;
+                font-size: 75px;
+                color: white;
+                background-color: rgba(18, 57, 231, 1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5%;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .accordion {
+
+        .acd-des{
+
+            a{
+
+                &:hover{
+                    text-decoration: underline !important;
+                }
+            }
+        }
+    }
+}

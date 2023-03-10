@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CalcoloApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/combustibili', [CalcoloApi::class, 'getData']);
 
 Route::get('/calcolo/{tipocomb}/{persone}/{tipo}', [CalcoloApi::class, 'calcCons']);
+
+/* Route::get('/auth-check', [AuthController::class, 'checkIfAuthenticated']); */

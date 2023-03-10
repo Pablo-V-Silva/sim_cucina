@@ -17,4 +17,8 @@ class PageController extends Controller
     public function redToConfrontoPage(){
         return view('vueConfronto');
     }
+
+    public function profilo(){
+        return view('authenticated.profile');
+    }
 }

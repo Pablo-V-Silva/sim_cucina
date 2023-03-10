@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalcoloController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SessioneController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,12 @@ Route::get('/vuetest', function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/confronto', [PageController::class, 'redToConfrontoPage'])->name('vueConfronto');
 
-Route::get('/confronto', [PageController::class, 'redToConfrontoPage']);
+Route::middleware('auth')->group(function(){
+    Route::get('/conf-start/{combustibile}/{persone}/{tipoCons}', [CalcoloController::class, 'startConfronto'])->name('start-confronto');
+
+    Route::resource('sessioni', SessioneController::class);
+
+    Route::get('/profilo', [PageController::class, 'profilo'])->name('profilo');
+});

@@ -117,7 +117,7 @@
                                     <div class="col-md-6">
                                         <h5 class="mb-2">Confronta</h5>
                                         <p class="mb-2">qui ci va un testo descrittovp di circa 2 o 3 righe</p>
-                                        <a class="button mt-3" href="/confronto">Vai alla pagina del confronto</a>
+                                        <a class="button mt-3"  :href="'/conf-start/' + getSelectedCombustibile + '/' + getSelectedPersone + '/' + getSelectedTipoCons">Vai alla pagina del confronto</a>
                                     </div>
                                 </div>
                             </div>
@@ -210,6 +210,18 @@ export default {
         getConsGiornaliero() {
             return this.consGiornaliero;
         },
+
+        getSelectedCombustibile(){
+            return this.combustibile;
+        },
+
+        getSelectedPersone(){
+            return this.persone;
+        },
+
+        getSelectedTipoCons(){
+            return this.tipoCons;    
+        }
     },
 
     created() {

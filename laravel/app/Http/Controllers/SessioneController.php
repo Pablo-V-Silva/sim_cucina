@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sessione;
 use App\Http\Requests\StoreSessioneRequest;
 use App\Http\Requests\UpdateSessioneRequest;
+use Illuminate\Support\Facades\Auth;
 
 class SessioneController extends Controller
 {
@@ -15,7 +16,8 @@ class SessioneController extends Controller
      */
     public function index()
     {
-        //
+        $sessioni = Auth::user()->sessioni;
+        dd($sessioni);
     }
 
     /**
