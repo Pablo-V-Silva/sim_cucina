@@ -25,12 +25,12 @@ Route::get('/confronta', [CalcoloController::class, 'confrontaCucina'])->name('c
 
 Route::get('/calcola-confronto', [CalcoloController::class, 'calcoloConfronta'])->name('calcola_confronto');
 
-Route::get('/sethome', function(){
-    return view('set.home');
+Route::get('/sethome', function () {
+  return view('set.home');
 })->name('layoutHome');
 
-Route::get('/vuetest', function(){
-    return view('vueTest');
+Route::get('/vuetest', function () {
+  return view('vueTest');
 });
 
 Auth::routes();

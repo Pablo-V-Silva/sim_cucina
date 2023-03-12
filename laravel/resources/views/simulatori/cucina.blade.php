@@ -10,8 +10,105 @@
 
 @section('content')
     <main>
+        <div class="containerJumbo">
+            <div class="containerCalcolo py-5 text-center">
+                <div class="container ">
+                    <div class="row align-items-center justify-content-center layerJumbo">
+                        <div class="col text-light">
+                            <h1 class="text-light">Benvenuti nell'era dell'efficienza energetica!</h1>
+                            <p class="text-light">Questo simulatore ti guiderà attraverso un'analisi dettagliata dell'impatto
+                                energetico e del
+                                consumo del tuo edificio, soddisfacendo la tua curiosità, il tuo desiderio di risparmiare
+                                denaro
+                                e di fare la differenza per il nostro pianeta.</p>
+                        </div>
+                        <div class="col">
+                            <form action="{{ route('calcola_cucina', $_REQUEST) }}" method="get">
+
+                                <div class="row  flex-column my-3 justify-content-center align-items-center">
+                                    <h2 class="text-light py-2">Scegli il tipo di combustibile</h2>
+                                    <select class="w-40 text-center" name="tipoCombustibile">
+                                        <option value="0" disabled selected>Seleziona</option>
+                                        @foreach ($combustibili as $combustibile)
+                                            <option value="{{ $combustibile->id }}">{{ $combustibile->tipo }}
+                                                {{ $combustibile->tecnologia == null ? '' : '(' . $combustibile->tecnologia . ')' }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="row my-3 flex-column align-items-center">
+                                    <h2 class="text-light py-2">Inserisci il numero di persone in casa</h2>
+                                    <input class="w-25 myInput text-center grow" type="number" name="numeroPersone"
+                                        value="{{ old('numeroPersone') }}">
+                                </div>
+                                <div class="row my-3 flex-column  justify-content-center align-items-center">
+                                    <h2 class="text-light py-2">Inserisci la quantità di consumo</h2>
+                                    <select class="w-40 grow" name="quantita">
+                                        <option value="0" disabled selected>Seleziona</option>
+                                        <option value="basso">Bassa</option>
+                                        <option value="medio">Media</option>
+                                        <option value="alto">Alta</option>
+                                    </select>
+                                </div>
+                                <div class="text-center mb-3">
+                                    <input class="calcolaBtn grow" type="submit" value="CALCOLA">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                @if ($is_calc == true)
+                                    <div class="pb-4">
+                                        <h2 class="my-2 text-light py-2">In totale
+                                            {{ $persone > 1 ? 'consumate' : 'consumi' }}:</h2>
+                                        <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero }} kw al giorno (€
+                                            {{ $spesa_tot_giornaliera }})
+                                        </h3>
+                                        <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero * 7 }} kw a settimana (€
+                                            {{ $spesa_tot_giornaliera * 7 }})
+                                        </h3>
+                                        <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero * 30 }} kw al mese* (€
+                                            {{ $spesa_tot_giornaliera * 30 }})
+                                        </h3>
+                                        <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero * 365 }} kw all'anno (€
+                                            {{ $spesa_tot_giornaliera * 365 }})
+                                        </h3>
+                                        <a class="confrontaBtn"
+                                            href="{{ route('confronta_cucina', ['spesa' => $spesa_tot_giornaliera, 'persone' => $persone, 'consumo' => $cons_tot_giornaliero, 'object' => $consumo]) }}">CONFRONTA</a>
+                                    </div>
+                                @endif
+
+                            </div>
+                        </div>
+                    </div>
+                    {{-- @if ($is_calc == true)
+                        <div class="layerJumbo pb-4 w-50">
+                            <h2 class="my-2 text-light py-2">In totale {{ $persone > 1 ? 'consumate' : 'consumi' }}:</h2>
+                            <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero }} kw al giorno (€
+                                {{ $spesa_tot_giornaliera }})
+                            </h3>
+                            <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero * 7 }} kw a settimana (€
+                                {{ $spesa_tot_giornaliera * 7 }})
+                            </h3>
+                            <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero * 30 }} kw al mese* (€
+                                {{ $spesa_tot_giornaliera * 30 }})
+                            </h3>
+                            <h3 class="my-2 text-light py-2">{{ $cons_tot_giornaliero * 365 }} kw all'anno (€
+                                {{ $spesa_tot_giornaliera * 365 }})
+                            </h3>
+                            <a class="confrontaBtn"
+                                href="{{ route('confronta_cucina', ['spesa' => $spesa_tot_giornaliera, 'persone' => $persone, 'consumo' => $cons_tot_giornaliero, 'object' => $consumo]) }}">CONFRONTA</a>
+                        </div>
+                    @endif --}}
+                </div>
+            </div>
+        </div>
+
+
+
         <!--=================================
-                                                                                                                                                                                                                                                                                                                                                                    banner -->
+                                                                                                                                                                                                                                                                    banner -->
 
         <div id="rev_slider_17_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="seo-5"
             data-source="gallery"
@@ -90,8 +187,8 @@
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             style="z-index: 10;"><img src="revolution/assets/dummy.png" alt=""
                                 data-ww="['1018px','1018px','1018px','1018px']"
-                                data-hh="['298px','298px','298px','298px']" data-lazyload="img/pexels6.jpg" data-no-retina
-                                style="object-fit: contain"> </div>
+                                data-hh="['298px','298px','298px','298px']" data-lazyload="revolution/assets/91dfe-12.png"
+                                data-no-retina> </div>
                         <!-- LAYER NR. 7 -->
                         <div class="tp-caption   tp-resizeme" id="slide-55-layer-11"
                             data-x="['right','right','right','right']" data-hoffset="['-660','-660','-660','-660']"
@@ -101,7 +198,9 @@
                             data-frames='[{"delay":4090,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                             data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            style="z-index: 11;"></div>
+                            style="z-index: 11;"><img src="revolution/assets/dummy.png" alt=""
+                                data-ww="['682px','682px','682px','682px']" data-hh="['428px','428px','428px','428px']"
+                                data-lazyload="revolution/assets/8cffe-z2.png" data-no-retina> </div>
                         <!-- LAYER NR. 8 -->
                         <div class="tp-caption   tp-resizeme" id="slide-55-layer-12"
                             data-x="['left','left','left','left']" data-hoffset="['-659','-659','-659','-659']"
@@ -111,7 +210,8 @@
                             data-frames='[{"delay":4090,"speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                             data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            style="z-index: 12;"> </div>
+                            style="z-index: 12;"><img src="revolution/assets/dummy.png" alt="" data-ww=""
+                                data-hh="" data-lazyload="revolution/assets/8cffe-z1.png" data-no-retina> </div>
                         <!-- LAYER NR. 9 -->
                         <div class="tp-caption   tp-resizeme" id="slide-55-layer-13"
                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -156,55 +256,7 @@
         </div>
 
 
-        {{-- Catalogo Simulatori --}}
-        <section id="1" class="education page-section-ptb"
-            style="background:url(images/bg-element/01.png) no-repeat 150px 70px;">
-            <div class="container">
-                <h2 class="pb-5 text-center">Cambia i tuoi Consumi, Senza cambiare le tue abitudini</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="feature-box-01 round text-center">
-                            <div class="feature-box-img mb-2">
-                                <img class="img-fluid" src="img/isometric-gas-stove.png" alt="">
-                            </div>
-                            <div class="feature-box-info mt-2">
-                                <h5 class="text-blue mb-2">Simulatore Cucina</h5>
-                                <p>Questo simulatore ti guiderà attraverso un'analisi dettagliata dell'impatto
-                                    energetico e del
-                                    consumo dei tuoi fornelli, soddisfacendo la tua curiosità, il tuo desiderio di
-                                    risparmiare
-                                    denaro
-                                    e di fare la differenza per il nostro pianeta.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-box-01 round text-center">
-                            <div class="feature-box-img mb-2">
-                                <img class="img-fluid" src="images/icon/05.png" alt="">
-                            </div>
-                            <div class="feature-box-info mt-2">
-                                <h5 class="text-blue mb-2"></h5>
-                                <p>Minima aut! Perspiciatis eos quos totam cum Et voluptatem cupiditate cum veniam dicta
-                                    assumenda fuga modi aperiam error.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-box-01 round text-center">
-                            <div class="feature-box-img mb-2">
-                                <img class="img-fluid" src="images/icon/06.png" alt="">
-                            </div>
-                            <div class="feature-box-info mt-2">
-                                <h5 class="text-blue mb-2">Social Media Marketing</h5>
-                                <p>Et voluptatem cupiditate minima aut! Perspiciatis eos quos totam cum cum veniam dicta
-                                    fuga modi error assumenda.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
     </main>
 @endsection
