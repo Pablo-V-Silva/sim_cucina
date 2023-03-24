@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CalcoloApi;
+use App\Http\Controllers\Api\SessioneApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,7 @@ Route::get('/combustibili', [CalcoloApi::class, 'getData']);
 Route::get('/calcolo/{tipocomb}/{persone}/{tipo}', [CalcoloApi::class, 'calcCons']);
 
 /* Route::get('/auth-check', [AuthController::class, 'checkIfAuthenticated']); */
+
+Route::post('/sessioni/store', [SessioneApi::class, 'createSessione']);
+
+

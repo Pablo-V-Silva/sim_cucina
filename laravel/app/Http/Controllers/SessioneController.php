@@ -17,28 +17,8 @@ class SessioneController extends Controller
     public function index()
     {
         $sessioni = Auth::user()->sessioni;
-        dd($sessioni);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreSessioneRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreSessioneRequest $request)
-    {
-        //
+        /* dd($sessioni); */
+        return view('authenticated.sessioni.index', compact('sessioni'));
     }
 
     /**
@@ -49,30 +29,7 @@ class SessioneController extends Controller
      */
     public function show(Sessione $sessione)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Sessione  $sessione
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Sessione $sessione)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateSessioneRequest  $request
-     * @param  \App\Models\Sessione  $sessione
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateSessioneRequest $request, Sessione $sessione)
-    {
-        //
+        return view('authenticated.sessioni.show', compact('sessione'));
     }
 
     /**
@@ -83,6 +40,7 @@ class SessioneController extends Controller
      */
     public function destroy(Sessione $sessione)
     {
-        //
+        $sessione->delete();
+        return redirect()->back()->with(session()->flash('success', 'La sessione è stata eliminata con successo'));
     }
 }

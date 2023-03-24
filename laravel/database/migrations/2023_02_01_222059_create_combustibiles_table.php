@@ -22,6 +22,7 @@ class CreateCombustibilesTable extends Migration
             $table->string('unitadimisura');
             $table->double('costo1kwhlordo');
             $table->double('costo1kwhnetto');
+            $table->string('immagine')->nullable();
             $table->tinyInteger('resaconversione');
             $table->timestamps();
         });

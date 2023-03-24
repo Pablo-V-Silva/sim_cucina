@@ -1,8 +1,32 @@
-// Fonts
+/* // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap'; */
+
+/* Global custom styling */
+
+#header.default{
+    background-color: rgba(18, 57, 231, 1);
+
+    .mega-menu{
+
+        .menu-links{
+
+            li{
+
+                a{
+                    color: white;
+
+                    &.nav-link{
+                        color: rgb(18, 57, 231);
+                    }
+                }
+            }
+        }
+    }
+    
+}

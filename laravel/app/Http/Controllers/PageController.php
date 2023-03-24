@@ -21,4 +21,8 @@ class PageController extends Controller
     public function profilo(){
         return view('authenticated.profile');
     }
+
+    public function vueConfronto(){
+        return view('authenticated.confronto');
+    }
 }

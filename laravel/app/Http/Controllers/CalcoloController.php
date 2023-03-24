@@ -20,7 +20,7 @@ class CalcoloController extends Controller
 		$cons_giornaliero = number_format($consumo->unitaconsumate / 7, 2, '.', '');
 		$cons_tot_giornaliero = $cons_giornaliero * $persone;
 		$spesa_tot_giornaliera = number_format($cons_tot_giornaliero * $consumo->combustibile->costo1kwhnetto, 2);
-		/* $spesa_tot_giornaliera = $cons_tot_giornaliero * $consumo->combustibile->costo1kwhnetto; */
+		/* $spesa_tot_giornaliera = $cons_tot_giornaliero * $consumo->combustibile->costo1kwhnetto; */ 
 
 		$is_calc = true;
 		$combustibili = Combustibile::all();

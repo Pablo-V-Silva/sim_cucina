@@ -1,4 +1,4 @@
-<!--=================================
+<?php /* <!-- =================================
    header -->
 
 <header id="header" class="default">
@@ -232,6 +232,64 @@
                                         </div>
                                     </div>
                                 </li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </nav>
+        <!-- menu end -->
+    </div>
+</header>
+
+*/ ?>
+
+<header id="header" class="default">
+    <div class="menu">
+        <!-- menu start -->
+        <nav id="menu" class="mega-menu">
+            <!-- menu list items container -->
+            <section class="menu-list-items">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- menu logo -->
+                            <ul class="menu-logo">
+                                <li>
+                                    <a href="{{ route('home') }}"><img id="logo_img" src="{{ asset('img/Logo.png') }}" alt="logo"> </a>
+                                </li>
+                            </ul>
+                            <!-- menu links -->
+                            <ul class="menu-links">
+                                <li><a href="#"> Simulatori <i class="fa fa-angle-down fa-indicator"></i> </a>
+                                    <!-- drop down multilevel  -->
+                                    <ul class="drop-down-multilevel">
+                                        <li><a class="nav-link" href="/cucina/calcolo">Cucina </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"> Profilo <i class="fa fa-angle-down fa-indicator"></i> </a>
+                                    <!-- drop down multilevel  -->
+                                    <ul class="drop-down-multilevel">
+                                        <!-- Authentication Links -->
+                                        @guest
+                                        @if (Route::has('login'))
+                                        <li>
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
+                                        @endif
+
+                                        @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                        @endif
+                                        @else
+                                        <li>
+                                            <a class="nav-link" href="{{route('profilo')}}">Profilo</a>
+                                        </li>
+                                        @endguest
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>

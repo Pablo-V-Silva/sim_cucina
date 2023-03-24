@@ -20,6 +20,7 @@ class CalcoloApi extends Controller
         $cons_giornaliero = number_format($consumo->unitaconsumate / 7, 2, '.', '');
         $cons_tot_giornaliero = number_format($cons_giornaliero * $persone, 2);
         $spesa_tot_giornaliera = number_format($cons_tot_giornaliero * $consumo->combustibile->costo1kwhnetto, 2);
-        return compact('spesa_tot_giornaliera', 'cons_tot_giornaliero');
+        $immagine = $consumo->combustibile->immagine;
+        return compact('spesa_tot_giornaliera', 'cons_tot_giornaliero', 'immagine');
     }
 }

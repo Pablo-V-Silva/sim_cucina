@@ -1,7 +1,7 @@
 @extends('layouts.mainLayout')
 
 @section('css')
-
+<link rel="stylesheet" href="{{asset('css/sessioni.css')}}">
 @endsection
 
 @section('header_js')
@@ -9,11 +9,9 @@
 @endsection
 
 @section('content')
-<div id="app">
-    <router-view></router-view>
-</div>
-
-<script src="{{asset('js/app.js')}}"></script>
+<section class="maincontent">
+    
+</section>
 @endsection
 
 @section('footer_js')
