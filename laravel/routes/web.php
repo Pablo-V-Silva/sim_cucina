@@ -31,16 +31,16 @@ Route::get('/sethome', function () {
 
 Route::get('/vuetest', function () {
   return view('vueTest');
-});
+})->name('vueTest');
 
 Auth::routes();
 
 Route::get('/confronto', [PageController::class, 'redToConfrontoPage'])->name('vueConfronto');
 
-Route::middleware('auth')->group(function(){
-    Route::get('/conf-start/{combustibile}/{persone}/{tipoCons}', [CalcoloController::class, 'startConfronto'])->name('start-confronto');
+Route::middleware('auth')->group(function () {
+  Route::get('/conf-start/{combustibile}/{persone}/{tipoCons}', [CalcoloController::class, 'startConfronto'])->name('start-confronto');
 
-    Route::resource('sessioni', SessioneController::class);
+  Route::resource('sessioni', SessioneController::class);
 
-    Route::get('/profilo', [PageController::class, 'profilo'])->name('profilo');
+  Route::get('/profilo', [PageController::class, 'profilo'])->name('profilo');
 });

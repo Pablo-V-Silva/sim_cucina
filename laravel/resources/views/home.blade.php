@@ -11,7 +11,7 @@
 @section('content')
     <main>
         <!--=================================
-                                                                                                                                                                                                                                                                                                                                                                    banner -->
+                                                                                                                                                                                                                                                                                                                                                                                    banner -->
 
         <div id="rev_slider_17_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="seo-5"
             data-source="gallery"
@@ -165,7 +165,9 @@
                     <div class="col-md-4">
                         <div class="feature-box-01 round text-center">
                             <div class="feature-box-img mb-2">
-                                <img class="img-fluid" src="img/isometric-gas-stove.png" alt="">
+                                <a href="{{ route('vueTest') }}">
+                                    <img class="img-fluid" src="img/isometric-gas-stove.png" alt="">
+                                </a>
                             </div>
                             <div class="feature-box-info mt-2">
                                 <h5 class="text-blue mb-2">Simulatore Cucina</h5>
@@ -184,7 +186,7 @@
                                 <img class="img-fluid" src="images/icon/05.png" alt="">
                             </div>
                             <div class="feature-box-info mt-2">
-                                <h5 class="text-blue mb-2"></h5>
+                                <h5 class="text-blue mb-2">Simulatore Macchina</h5>
                                 <p>Minima aut! Perspiciatis eos quos totam cum Et voluptatem cupiditate cum veniam dicta
                                     assumenda fuga modi aperiam error.</p>
                             </div>
@@ -196,7 +198,9 @@
                                 <img class="img-fluid" src="images/icon/06.png" alt="">
                             </div>
                             <div class="feature-box-info mt-2">
-                                <h5 class="text-blue mb-2">Social Media Marketing</h5>
+                                <h5 class="text-blue mb-2">
+                                    Simulatore Idrico
+                                </h5>
                                 <p>Et voluptatem cupiditate minima aut! Perspiciatis eos quos totam cum cum veniam dicta
                                     fuga modi error assumenda.</p>
                             </div>
