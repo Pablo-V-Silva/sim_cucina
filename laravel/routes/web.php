@@ -3,6 +3,7 @@
 use App\Http\Controllers\CalcoloController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SessioneController;
+use App\Http\Middleware\Admin;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
@@ -57,6 +58,12 @@ Route::middleware('auth')->group(function(){
         return view('vueTest', compact('user'));
     })->missing(function(){
         return route('cucina');
+    });
+
+    Route::middleware(Admin::class)->group(function(){
+        Route::get('/test', function(){
+            return view('set.test');
+        });
     });
 });
 
