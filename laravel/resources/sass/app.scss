@@ -30,3 +30,45 @@
     }
     
 }
+
+#admin-bar-container{
+    position: fixed;
+    z-index: 999999;
+    background: white;
+    top: calc(50% - 50px);
+    left: calc(-150px / 10 * 8);
+    display: flex;
+    align-items: center;
+    width: 150px;
+    transition: all .3s;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        a{
+            padding: 0 .5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        width: 20%;
+        cursor: pointer;
+
+        p{
+            writing-mode: tb;
+            margin: 0;
+            color: black;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}

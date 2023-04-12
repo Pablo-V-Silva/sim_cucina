@@ -60,6 +60,13 @@ page-section -->
                                 <div class="acd-des">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
                             </div>
                         </div>
+                        @if(Auth::user()->role->name == 'Admin')
+                        <div class="clearfix mb-2">
+                            <a href="{{route('admin.dashboard')}}">
+                                <strong>Pannello di Controllo</strong>
+                            </a>
+                        </div>
+                        @endif
                         <div class="clearfix mb-2">
                             <a class="text-blue" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

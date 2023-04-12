@@ -1,0 +1,21 @@
+.vue-container .nav-tabs div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.vue-container .nav-tabs li img {
+  width: 100%;
+}
+
+@media screen and (max-width: 420px) {
+  #app .vue-container .nav-tabs li {
+    width: 33.3333333333%;
+  }
+  #app .vue-container .nav-tabs li img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}

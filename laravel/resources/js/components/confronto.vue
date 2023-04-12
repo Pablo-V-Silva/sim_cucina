@@ -1,9 +1,10 @@
 <template>
-    <div class="confronta-container">
-        <div class="choose-confronto">
-            <!--=================================
+    <div class="vue-container">
+        <div class="confronta-container">
+            <div class="choose-confronto">
+                <!--=================================
 intro-title -->
-            <!-- <section class="intro-title black-bg">
+                <!-- <section class="intro-title black-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-left">
@@ -24,71 +25,73 @@ intro-title -->
                     </div>
                 </div>
             </section> -->
-            <!--=================================
+                <!--=================================
 intro-title -->
 
-            <section class="tabs" id="main-cont-vue">
-                <div class="container">
-                    <div class="row mt-10">
-                        <div class="col-md-4 bottom-m3">
-                            <div class="pricing pricing-01 active text-center">
-                                <div class="pricing-title">
-                                    <div class="section-title text-center">
-                                        <h5 class="text-center">IL TUO CALCOLO</h5>
-                                        <span>Sessione ID:</span>
+                <section class="tabs" id="main-cont-vue">
+                    <div class="container">
+                        <div class="row mt-10">
+                            <div class="col-md-4 bottom-m3">
+                                <div class="pricing pricing-01 active text-center">
+                                    <div class="pricing-title">
+                                        <div class="section-title text-center">
+                                            <h5 class="text-center">IL TUO CALCOLO</h5>
+                                            <span>Sessione ID:</span>
+                                        </div>
+                                        <div class="pricing-img">
+                                            <img src="/images/icon/05.png" alt="">
+                                        </div>
+                                        <div class="pricing-prize">
+                                            <h2 class="text-black"><span>€ </span>{{ getSpesaMensile }} <span>/AL
+                                                    MESE</span>
+                                            </h2>
+                                        </div>
                                     </div>
-                                    <div class="pricing-img">
-                                        <img src="/images/icon/05.png" alt="">
+                                    <div class="pricing-list">
+                                        <ul class="text-left px-4 w-100% text-black">
+                                            <li class="w-100 d-flex justify-content-between"><span>Combustibile:</span>
+                                                <span><strong>{{ getCombustibileName }}</strong></span>
+                                            </li>
+                                            <li class="w-100 d-flex justify-content-between"><span>Persone:</span>
+                                                <span><strong>{{ getPersone }}</strong></span>
+                                            </li>
+                                            <li class="w-100 d-flex justify-content-between"><span>TipoConsumo:</span>
+                                                <span><strong>{{ getTipoConsumo }}</strong></span>
+                                            </li>
+                                            <li class="w-100 d-flex justify-content-between"><span>Consumo Mensile:</span>
+                                                <span><strong>{{ getConsumoMensile }} KWh</strong></span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="pricing-prize">
-                                        <h2 class="text-black"><span>€ </span>{{ getSpesaMensile }} <span>/AL MESE</span>
-                                        </h2>
+                                    <div class="pricing-order mt-3">
+                                        <a class="button black active" href="#" v-on:click="goToCalcolo()">Cambia Dati</a>
                                     </div>
-                                </div>
-                                <div class="pricing-list">
-                                    <ul class="text-left px-4 w-100% text-black">
-                                        <li class="w-100 d-flex justify-content-between"><span>Combustibile:</span>
-                                            <span><strong>{{ getCombustibileName }}</strong></span>
-                                        </li>
-                                        <li class="w-100 d-flex justify-content-between"><span>Persone:</span>
-                                            <span><strong>{{ getPersone }}</strong></span>
-                                        </li>
-                                        <li class="w-100 d-flex justify-content-between"><span>TipoConsumo:</span>
-                                            <span><strong>{{ getTipoConsumo }}</strong></span>
-                                        </li>
-                                        <li class="w-100 d-flex justify-content-between"><span>Consumo Mensile:</span>
-                                            <span><strong>{{ getConsumoMensile }} KWh</strong></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="pricing-order mt-3">
-                                    <a class="button black active" href="#" v-on:click="goToCalcolo()">Cambia Dati</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-8 d-flex flex-column justify-content-center align-items-center">
-                            <h4 class="mb-4 text-center">Seleziona il Combustibile con cui confrontare</h4>
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs round justify-content-center align-items-center" role="tablist">
-                                <li role="presentation" v-for="combustibile in getCombustibili" :key="combustibile.id"
-                                    class="my-1">
-                                    <a href="#" v-on:click="confronta(combustibile.id)" aria-controls="all-faqs" role="tab"
-                                        data-toggle="tab" class="d-flex align-items-center">
-                                        <img :src="'/img/icons-png/' + combustibile.immagine" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                            <h4 v-if="getConfrontoName != ''" >{{ getConfrontoName }}</h4>
-                            <div id="submit-button-container">
-                                <div class="col-sm-12 my-4 disabled" id="submit-button">
-                                    <a class="button my-3 w-100 text-center" href="#"
-                                        v-on:click="startConfronto()">Calcola</a>
+                            <div class="col-md-8 d-flex flex-column justify-content-center align-items-center">
+                                <h4 class="mb-4 text-center">Seleziona il Combustibile con cui confrontare</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs round justify-content-center align-items-center" role="tablist">
+                                    <li role="presentation" v-for="combustibile in getCombustibili" :key="combustibile.id"
+                                        class="my-1">
+                                        <a href="#" v-on:click="confronta(combustibile.id)" aria-controls="all-faqs"
+                                            role="tab" data-toggle="tab" class="d-flex align-items-center">
+                                            <img :src="'/img/icons-png/' + combustibile.immagine" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h4 v-if="getConfrontoName != ''">{{ getConfrontoName }}</h4>
+                                <div id="submit-button-container">
+                                    <div class="col-sm-12 my-4 disabled" id="submit-button">
+                                        <a class="button my-3 w-100 text-center" href="#"
+                                            v-on:click="startConfronto()">Calcola</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
 </template>
@@ -112,6 +115,8 @@ export default {
             confrontoId: null,
             isConfronto: false,
             confrontoName: '',
+            userId: null,
+            sessionToken: null,
         }
     },
 
@@ -146,7 +151,9 @@ export default {
 
         getUserId() {
             let userId = document.querySelector("meta[name='user']").getAttribute('content');
-            this.user = userId;
+            this.userId = userId;
+            let token = document.querySelector("meta[name='session']").getAttribute('content');
+            this.sessionToken = token;
         },
 
         getCombustibileList() {
@@ -200,6 +207,20 @@ export default {
         },
 
         startConfronto() {
+            console.log('user: ' + this.userId);
+            console.log('remember: ' + this.sessionToken);
+            axios
+                .post('/api/sessioni/store', {
+                    userId: this.userId,
+                    sessionToken: this.sessionToken,
+                    combustibile: this.combustibile,
+                    persone: this.persone,
+                    tipoCons: this.tipoConsumo,
+                    id_confrontato: this.confrontoId,
+                })
+                .then((r) => {
+                    console.log(r)
+                })
             this.$router.push({
                 name: 'CalcolaConfronto',
                 query: {
@@ -285,4 +306,5 @@ export default {
 
 .nav-tabs .active img {
     filter: invert(1);
-}</style>
+}
+</style>

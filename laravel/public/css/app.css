@@ -16,3 +16,41 @@
 #header.default .mega-menu .menu-links li a.nav-link {
   color: rgb(18, 57, 231);
 }
+
+#admin-bar-container {
+  position: fixed;
+  z-index: 999999;
+  background: white;
+  top: calc(50% - 50px);
+  left: -120px;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  transition: all 0.3s;
+}
+#admin-bar-container .left {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+#admin-bar-container .left a {
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#admin-bar-container .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 20%;
+  cursor: pointer;
+}
+#admin-bar-container .right p {
+  writing-mode: tb;
+  margin: 0;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}

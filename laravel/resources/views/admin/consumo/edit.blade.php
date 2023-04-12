@@ -1,7 +1,7 @@
 @extends('layouts.mainLayout')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/cucina.css')}}">
+
 @endsection
 
 @section('header_js')
@@ -9,11 +9,7 @@
 @endsection
 
 @section('content')
-<div id="app">
-    <router-view></router-view>
-</div>
-
-<script src="{{asset('js/app.js')}}"></script>
+<h1>This is the admin consumo edit page</h1>
 @endsection
 
 @section('footer_js')

@@ -1,0 +1,41 @@
+.admin-section{
+
+    .container{
+
+        h1{
+            margin-bottom: 1.5rem;
+        }
+
+        .content{
+
+            .left{
+                width: 25%;
+            }
+
+            .right{
+                width: 75%;
+            }
+        }
+    }
+}
+
+.sidebar-container{
+    border-right: 1px solid #00000030;
+
+    .title{
+        margin-bottom: 1rem;
+    }   
+
+    .actions{
+
+        .action{    
+            padding: .75rem 0;
+            border-top: 1px solid #00000030;
+
+            a{
+                font-size: 20px;
+
+            }
+        }
+    }
+}

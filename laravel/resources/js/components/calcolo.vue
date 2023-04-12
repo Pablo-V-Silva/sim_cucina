@@ -149,14 +149,12 @@ export default {
             persone: null,
             tipoCons: null,
             sessionToken: null,
-            userId: null,
             combustibileName: 'Nessuna Selezione'
         }
     },
 
     mounted() {
         this.getDataForInputs();
-        this.getUserId();
     },
 
     methods: {
@@ -217,25 +215,7 @@ export default {
             this.persone = value;
         },
 
-        getUserId() {
-            let userId = document.querySelector("meta[name='user']").getAttribute('content');
-            this.userId = userId;
-            let token = document.querySelector("meta[name='session']").getAttribute('content');
-            this.sessionToken = token;
-        },
-
         goToConfronto() {
-            axios
-                .post('/api/sessioni/store', {
-                    userId: this.userId,
-                    sessionToken: this.sessionToken,
-                    combustibile: this.combustibile,
-                    persone: this.persone,
-                    tipoCons: this.tipoCons,
-                })
-                .then((r) => {
-                    console.log(r)
-                })
             this.$router.push({
                 name: 'Confronto',
                 query: {

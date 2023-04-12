@@ -1,0 +1,23 @@
+.admin-section .container h1 {
+  margin-bottom: 1.5rem;
+}
+.admin-section .container .content .left {
+  width: 25%;
+}
+.admin-section .container .content .right {
+  width: 75%;
+}
+
+.sidebar-container {
+  border-right: 1px solid rgba(0, 0, 0, 0.1882352941);
+}
+.sidebar-container .title {
+  margin-bottom: 1rem;
+}
+.sidebar-container .actions .action {
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1882352941);
+}
+.sidebar-container .actions .action a {
+  font-size: 20px;
+}

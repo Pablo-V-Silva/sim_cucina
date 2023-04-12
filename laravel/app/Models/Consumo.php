@@ -12,7 +12,7 @@ class Consumo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_combustibile', 'tipoconsumo', 'unitaconsumate'
+        'id_combustibile', 'id_confrontato', 'tipoconsumo', 'unitaconsumate'
     ];
 
     public function combustibile(): BelongsTo{

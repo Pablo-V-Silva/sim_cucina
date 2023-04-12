@@ -46,6 +46,10 @@
 <body>
     @include('partials.loader')
 
+    @if(Auth::check() && Auth::user()->role->id == '1')
+        @include('partials.adminBar')
+    @endif
+
     @include('partials.header')
 
     <!-- <div id="app"></div> -->

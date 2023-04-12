@@ -1,6 +1,9 @@
 <?php
-
 use App\Http\Controllers\CalcoloController;
+use App\Http\Controllers\Admin\CombustibileController;
+use App\Http\Controllers\Admin\ConsumoController as AdminConsumoController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
+use App\Http\Controllers\ConsumoController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SessioneController;
 use App\Http\Middleware\Admin;
@@ -60,10 +63,25 @@ Route::middleware('auth')->group(function(){
         return route('cucina');
     });
 
-    Route::middleware(Admin::class)->group(function(){
-        Route::get('/test', function(){
-            return view('set.test');
-        });
+    Route::middleware(Admin::class)->prefix('admin')->name('admin.')->group(function(){
+        /* Admin index Page */
+        Route::get('/', [AdminPageController::class, 'index'])->name('dashboard');
+        
+        /* Admin Combustibile */
+        Route::get('combustibile', [CombustibileController::class, 'index'])->name('combustibile');
+        Route::get('combustibile/create', [CombustibileController::class, 'create'])->name('combustibile.create');
+        Route::post('combustibile/store', [CombustibileController::class, 'store'])->name('combustibile.store');
+        Route::get('combustibile/{combustibile}/edit', [CombustibileController::class , 'edit'])->name('combustibile.edit');
+        Route::put('combustibile/{combustibile}', [CombustibileController::class, 'update'])->name('combustibile.update');
+        Route::delete('combustibile/{combustibile}', [CombustibileController::class, 'destroy'])->name('combustibile.destroy');
+
+        /* Admin Consumo */
+        Route::get('consumo', [AdminConsumoController::class, 'index'])->name('consumo');
+        Route::get('consumo/create', [AdminConsumoController::class , 'create'])->name('consumo.create'); 
+        Route::post('consumo/store', [AdminConsumoController::class, 'store'])->name('consumo.store');
+        Route::get('consumo/edit', [AdminConsumoController::class, 'edit'])->name('consumo.edit');
+        Route::put('consumo/update', [AdminConsumoController::class, 'update'])->name('consumo.update');
+        Route::delete('consumo/{consumo}', [AdminConsumoController::class, 'destroy'])->name('consumo.destroy');
     });
 });
 
@@ -74,5 +92,5 @@ Route::get('/session', function(){
 });
 
 Route::get('/ustest', function(){
-    dd(Auth::user(2));
+    dd(Auth::user()->remember_token);
 });

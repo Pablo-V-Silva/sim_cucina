@@ -1,0 +1,42 @@
+.vue-container{
+
+    .nav-tabs{
+        
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        li{
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 420px){
+    #app{
+
+        .vue-container{
+
+            .nav-tabs{
+        
+                li{
+                    width: calc(100% / 3);
+                    
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+}

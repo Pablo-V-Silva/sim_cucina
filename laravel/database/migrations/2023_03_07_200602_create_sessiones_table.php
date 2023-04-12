@@ -15,6 +15,7 @@ class CreateSessionesTable extends Migration
     {
         Schema::create('sessiones', function (Blueprint $table) {
             $table->id();
+            $table->smallInteger('id_confrontato');
             $table->string('tipoconsumo');
             $table->integer('persone');
             $table->timestamps();
